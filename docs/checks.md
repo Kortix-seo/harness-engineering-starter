@@ -16,6 +16,17 @@ same edit.
 
 Run all three with `npm run check`.
 
+### The seeded run, recorded
+
+All three were seeded and re-run in a clean clone on 2026-10-27, which is the
+only reason the failure messages can be trusted to carry the fix:
+
+| Seed | Output | Restored |
+|---|---|---|
+| `import { parseInvoiceCsv } from '../adapters/csv-invoices.mjs'` added to `src/domain/invoice-totals.mjs` | `FAIL src/domain/invoice-totals.mjs imports from src/adapters/` and the one-way rule | file reset, `imports: ok` |
+| `totalCents` returned as `String(totalCents)` | `src/domain/invoice-totals.mjs(65,12): error TS2322: Type 'string' is not assignable to type 'number'.` plus the three causes | file reset, `types: ok` |
+| the totals assertion changed from `203000` to `204000` | `pass 5 / fail 1`, the assertion, and the instruction to re-read the rule before touching the test | file reset, `tests: ok` |
+
 ## Wiring them as a pre-commit hook
 
 ```bash
