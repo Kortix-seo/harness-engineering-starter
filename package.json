@@ -1,0 +1,17 @@
+{
+  "name": "harness-engineering-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "One agent, its grants, and the three checks that decide whether its work may land.",
+  "type": "module",
+  "scripts": {
+    "check": "./scripts/check-imports.sh && ./scripts/check-types.sh && ./scripts/check-tests.sh",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.mjs",
+    "totals": "node scripts/invoice-totals.mjs data/invoices.csv"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^22.20.0"
+  }
+}
