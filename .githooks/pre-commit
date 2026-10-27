@@ -1,0 +1,6 @@
+#!/bin/sh
+# The cheap half of the harness, run on the way in.
+# Wire it once with: git config core.hooksPath .githooks
+set -eu
+./scripts/check-imports.sh
+./scripts/check-types.sh
