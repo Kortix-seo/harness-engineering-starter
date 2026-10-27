@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://kortix.com/schema/kortix.v2.schema.json
+#
+# A governance-only Kortix manifest. Read it as a permission slip, not a program:
+# every key below answers "what may this agent reach", never "how does it think".
+# Behaviour belongs in agents/<name>.md.
+#
+# Grants here are deny-by-default: a key you leave out resolves to none. The
+# manifest below is short on purpose, and the omissions are the security model.
+kortix_version: 2
+
+default_agent: invoice-triage
+
+project:
+  name: harness-engineering-starter
+  description: One agent, its grants, and the three checks that decide whether its work may land.
+
+agents:
+  invoice-triage:
+    file: agents/invoice-triage.md
+    # No connectors and no secrets: the job reads files in this repository.
+    # An omitted grant resolves to none, so a prompt that asks for a CRM still
+    # has no path to one.
+    connectors: none
+    secrets: none
+    skills: none
+    # An allow list, not an exclusion list. `bash` is here because the job runs
+    # the three checks; widen this by adding a name and reviewing the diff.
+    tools: [read, grep, edit, bash]
+    # A checkout of this repository, on the session's own branch.
+    workspace: { project_repository: true }
