@@ -1,0 +1,6 @@
+id,amount_cents,currency,paid_on,voided
+INV-1001,125000,USD,,false
+INV-1002,40000,USD,2026-10-14,false
+INV-1003,999,USD,,true
+INV-1004,78000,USD,,false
+INV-1005,50000,EUR,,false
