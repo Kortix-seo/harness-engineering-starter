@@ -4,6 +4,8 @@ An open-source harness engineering starter you can clone and run: one agent file
 
 This repository is the runnable half of [how to build an agent harness in seven steps](https://harnessengineeringguide.com/how-to-build-an-agent-harness): every step in that build lands one file, and the files are all here — including the checks, which are the part most write-ups stop before. Clone it, replace the invoice job with your own, and run `npm run check`.
 
+If you want the definition first, [what harness engineering is](https://harnessengineeringguide.com/what-is-harness-engineering) covers where the term came from and what it leaves behind in a repository, and [the six components](https://harnessengineeringguide.com/harness-engineering-components) is the map this layout follows.
+
 ## What is here, and which step it belongs to
 
 | File | What it decides | Step |
@@ -31,7 +33,7 @@ skipped INV-1005: currency — currency EUR, not converted
 why: paid_on 1, voided 1, currency 1
 ```
 
-Every rule behind those lines is in `src/domain/invoice-totals.mjs`, and none of them is in the parser. That split is what the first check protects: when the export moves from CSV to an API, `src/adapters/` changes and the rules do not — unless somebody reaches across the line to save a parameter, and then the rules quietly belong to the file format.
+Every rule behind those lines is in `src/domain/invoice-totals.mjs`, and none of them is in the parser. That split is what the first check protects: when the export moves from CSV to an API, `src/adapters/` changes and the rules do not — unless somebody reaches across the line to save a parameter, and then the rules quietly belong to the file format. That is the difference between [harness engineering and context engineering](https://harnessengineeringguide.com/harness-engineering-vs-context-engineering) in one repository: the rules are files here, and what the model reads on a turn is an input to them.
 
 ## Run it
 
@@ -63,7 +65,7 @@ agents:
 
 Grants are deny-by-default, so the omissions are the security model: a prompt that asks the agent to file the invoice in a CRM has no path to one, and the refusal is the harness working. `tools` is an allow list — one extra tool is a decision someone makes on purpose, in a diff, with a reason.
 
-Two grants are worth reading carefully. `workspace: { project_repository: true }` gives each session a checkout of this repository on its own branch, so a bad run costs the time it took: the branch is discarded, `main` has not moved. `bash` is granted because the job runs the three checks; a shell also reaches the network, which is why it is the last tool added and the first one questioned.
+A harness for a coding agent is the same shape with a smaller surface — [the coding-agent harness](https://harnessengineeringguide.com/coding-agent-harness) shows the four controls and which of them the CLI's own config cannot give you. Two grants are worth reading carefully. `workspace: { project_repository: true }` gives each session a checkout of this repository on its own branch, so a bad run costs the time it took: the branch is discarded, `main` has not moved. `bash` is granted because the job runs the three checks; a shell also reaches the network, which is why it is the last tool added and the first one questioned.
 
 ## Adapt it to your own job
 
@@ -71,7 +73,7 @@ Two grants are worth reading carefully. `workspace: { project_repository: true }
 2. Replace `src/domain/` and `src/adapters/` with your rules and your shapes, keeping the direction between them.
 3. Keep one of the three checks and delete the rest you cannot make fail on a real mistake. A check nobody has seen fail is a line in a file.
 
-More on the term, the guides/sensors split and where each file lands: [harness engineering](https://harnessengineeringguide.com/), [what an agent harness owns](https://harnessengineeringguide.com/harness-engineering-components).
+More on the term, the guides/sensors split and where each file lands: [harness engineering](https://harnessengineeringguide.com/), [the six components](https://harnessengineeringguide.com/harness-engineering-components), and [what makes a harness open source](https://harnessengineeringguide.com/open-source-agent-harness) — the three promises this repository tries to keep.
 
 ## Project links
 
