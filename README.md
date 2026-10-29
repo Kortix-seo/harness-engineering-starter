@@ -73,7 +73,7 @@ A harness for a coding agent is the same shape with a smaller surface — [the c
 2. Replace `src/domain/` and `src/adapters/` with your rules and your shapes, keeping the direction between them.
 3. Keep one of the three checks and delete the rest you cannot make fail on a real mistake. A check nobody has seen fail is a line in a file.
 
-More on the term, the guides/sensors split and where each file lands: [harness engineering](https://harnessengineeringguide.com/), [the six components](https://harnessengineeringguide.com/harness-engineering-components), and [what makes a harness open source](https://harnessengineeringguide.com/open-source-agent-harness) — the three promises this repository tries to keep.
+More on the term, the guides/sensors split and where each file lands: [harness engineering](https://harnessengineeringguide.com/), [the six components](https://harnessengineeringguide.com/harness-engineering-components), [what makes a harness open source](https://harnessengineeringguide.com/open-source-agent-harness), and [where a framework stops and the harness begins](https://harnessengineeringguide.com/harness-vs-framework) — the three promises this repository tries to keep.
 
 ## Project links
 
