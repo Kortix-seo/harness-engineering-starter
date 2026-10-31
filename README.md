@@ -1,6 +1,6 @@
 # harness-engineering-starter
 
-An open-source harness engineering starter you can clone and run: one agent file, a governance-only manifest, and three checks whose failure messages carry the fix. Kortix is the open-source AI Operating System.
+An open-source harness engineering starter you can clone and run: one agent file, a governance-only manifest, and three checks whose failure messages carry the fix. Kortix is the open-source CompanyOS.
 
 This repository is the runnable half of [how to build an agent harness in seven steps](https://harnessengineeringguide.com/how-to-build-an-agent-harness): every step in that build lands one file, and the files are all here — including the checks, which are the part most write-ups stop before. Clone it, replace the invoice job with your own, and run `npm run check`.
 
@@ -77,6 +77,6 @@ More on the term, the guides/sensors split and where each file lands: [harness e
 
 ## Project links
 
-- [Kortix](https://kortix.com) — the open-source AI Operating System these files boot into
+- [Kortix](https://kortix.com) — the open-source CompanyOS these files boot into
 - [Kortix documentation](https://kortix.com/docs)
 - [Kortix on GitHub](https://github.com/kortix-ai/suna) — the runtime and the starter manifest this layout comes from
