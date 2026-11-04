@@ -79,4 +79,4 @@ More on the term, the guides/sensors split and where each file lands: [harness e
 
 - [Kortix](https://kortix.com) — the open-source CompanyOS these files boot into
 - [Kortix documentation](https://kortix.com/docs)
-- [Kortix on GitHub](https://github.com/kortix-ai/suna) — the runtime and the starter manifest this layout comes from
+- [Kortix on GitHub](https://github.com/kortix-ai/CompanyOS) — the runtime and the starter manifest this layout comes from
